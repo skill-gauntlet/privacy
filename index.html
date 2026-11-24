@@ -91,6 +91,8 @@
 </head>
 <body>
 <header>
+  <!-- The app icon, The Climb (tool/generate_icon_assets.dart): the
+       visible part (18..90) of its 108-unit adaptive-icon grid. -->
   <svg class="mark" viewBox="18 18 72 72" aria-hidden="true">
     <path d="M27 77 H40 V65 H52 V53 H64 V41 H80 V77 Z" fill="#18FFFF" fill-opacity=".16"/>
     <path d="M27 77 H40 V65 H52 V53 H64 V41 H80" fill="none" stroke="#18FFFF" stroke-width="6.5"
@@ -98,7 +100,7 @@
     <circle cx="72" cy="31" r="5.5" fill="#FFFFFF"/>
   </svg>
   <h1>Skill Gauntlet — Privacy Policy</h1>
-  <p>Effective November 2, 2026</p>
+  <p>Effective November 24, 2026</p>
 </header>
 <main>
 
@@ -109,14 +111,14 @@ wherever the App is available (currently Android; other platforms may
 follow).</p>
 
 <p>The short version: the App itself has no accounts, no servers, and
-doesn't collect anything about you. The exceptions are the two optional
-Google services it integrates with — Google Play Games Services (for
-leaderboards) and Google AdMob (for the optional "watch an ad to
-continue" feature) — and a time check the Daily Challenge and Weekly
-Gauntlet make with a public time server. All three are covered in detail
-below.</p>
+doesn't collect anything about you. What leaves your device goes to the
+two Google services it uses — Google Play Games Services (leaderboards,
+and restoring your progress) and Google AdMob (the "watch an ad to
+continue" feature) — and to a public time server for a time check. All
+three are covered in detail below, as is Android's own backup of app
+data.</p>
 
-<h2>Information stored only on your device</h2>
+<h2>Information stored on your device</h2>
 <p>The App keeps the following locally on your device, using Android's
 standard app-storage mechanism. None of it is ever transmitted to us or
 to any server we operate — we don't operate one:</p>
@@ -126,18 +128,25 @@ to any server we operate — we don't operate one:</p>
   <li>Leaderboard scores waiting to be sent, if they couldn't be sent yet (for example, while offline), and your best score on each leaderboard</li>
   <li>Your rewards calendar: how many days you've played, the last day counted, your saved revives, and which cosmetics you've chosen</li>
   <li>Which Google Play Games account each set of progress belongs to (its player ID), so that each account you sign in with keeps its own progress</li>
-  <li>Sound and haptics on/off preferences</li>
+  <li>Sound, music and haptics on/off preferences</li>
 </ul>
-<p>This data is removed automatically if you uninstall the App, or
-manually if you clear the App's storage from your device's system
-settings.</p>
+<p>You can remove it by clearing the App's storage in your device's
+system settings, or by uninstalling the App. Like most apps, the App
+allows Android's own backup: if backup is turned on for your device
+(Settings → Google → Backup), Android may include this data in the backup
+it keeps in your Google account, and restore it if you reinstall the App.
+That backup is Android's and Google's, under your control in those
+settings; we never see it.</p>
 
 <h2>Google Play Games Services (Leaderboards)</h2>
-<p>If you choose to view or submit to leaderboards, the App uses <a
+<p>The App uses <a
 href="https://developers.google.com/games/services" target="_blank"
 rel="noopener">Google Play Games Services</a>, tied to your Google
-account. When you do, the App submits up to six scores, associated with
-your Google Play Games profile:</p>
+account. If your device is set up for Play Games, the App signs in to it
+automatically when it starts (you can also sign in from LEADERBOARDS).
+While signed in, the App submits up to six scores, associated with your
+Google Play Games profile, as you reach them — and, when you open or
+return to the App, any that couldn't be sent yet:</p>
 <ul>
   <li>Your highest level ever reached</li>
   <li>When you first cleared all 100 levels (the Hall of Fame)</li>
@@ -147,8 +156,9 @@ your Google Play Games profile:</p>
 </ul>
 <p>Each score also carries your current badge from the rewards calendar,
 so other players see it next to your name on the leaderboards.</p>
-<p>When you sign in, the App also reads your own scores back, so your
-records return after a reinstall. We never see or store this data
+<p>When you're signed in, the App also reads your own scores back, at
+launch and when you return to it, so your records return after a
+reinstall. We never see or store this data
 ourselves; it's held and displayed entirely by Google Play Games
 Services, governed by <a href="https://policies.google.com/privacy"
 target="_blank" rel="noopener">Google's Privacy Policy</a>. You can
@@ -173,18 +183,33 @@ Daily Challenge and Weekly Gauntlet need an internet connection. The main
 game works fully offline; a clear made offline is stamped the next time
 you're online.</p>
 
+<h2>Updates</h2>
+<p>When you open the App, it asks the Google Play Store on your device
+whether a newer version of the App is available, and if so, Google Play
+shows its own update screen. This goes through Google Play, which already
+manages the App's installation; the App sends nothing about you for it.
+</p>
+
 <h2>Google AdMob (rewarded ads)</h2>
-<p>If you choose to watch a rewarded video ad to continue a run, the App
-uses <a href="https://admob.google.com/" target="_blank"
-rel="noopener">Google AdMob</a> to deliver it. This is the only place ads
-appear in the App — there are no banner ads and no ads that interrupt you
-uninvited. Showing an ad may involve Google and its advertising partners
+<p>An ad is only ever shown when you choose to watch one, to continue a
+run; this is the only place ads appear in the App — there are no banner
+ads and no ads that interrupt you uninvited. The App uses <a
+href="https://admob.google.com/" target="_blank" rel="noopener">Google
+AdMob</a> to deliver them, and so that an ad is ready when you want one,
+it starts the AdMob SDK and loads an ad in advance, soon after the App
+starts (after your consent, where that's required: see below), whether
+or not you then watch it. Showing an ad may involve Google and its advertising partners
 collecting device and advertising identifiers, approximate location, and
 ad-interaction data, for ad delivery, measurement, and (unless you've
 opted out) personalization. This collection is governed by <a
 href="https://policies.google.com/technologies/ads" target="_blank"
 rel="noopener">Google's Ads Privacy Policy</a>, not by us — we don't
 receive or store any of it.</p>
+<p>If you're in the European Economic Area, the United Kingdom or
+Switzerland, the App first asks for your consent to this, through
+Google's consent message, before any ad is requested; your choice is kept
+on your device. You can change it at any time in the App's Settings,
+under PRIVACY OPTIONS.</p>
 <div class="callout">
 You can limit ad personalization for your device through your device's
 own ad settings (Android: Settings → Google → Ads), or opt out of
